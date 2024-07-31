@@ -1,0 +1,77 @@
+{{#d-modal-body
+  title="discourse_rewards.reward.modal_title"
+  class="discourse-video-upload-modal"
+}}
+  <div class="discourse-rewards-reward-card {{if fullView 'full-view'}}">
+    <div class="card">
+      {{#if reward.id}}
+        <img
+          src={{reward.upload_url}}
+          alt={{i18n "admin.rewards.image"}}
+          class="reward-image"
+        />
+      {{/if}}
+      <div class="contents">
+        {{#if reward.id}}
+          <div class="title-contents">
+            <p class="title">{{reward.title}}</p>
+            {{#if user_reward}}
+              {{format-date user_reward.created_at format="tiny"}}
+            {{/if}}
+          </div>
+          {{#if username}}
+            <p class="username">{{i18n "discourse_rewards.user.title"}}
+              <a class="mention" href={{path}}>@{{username}}</a></p>
+          {{/if}}
+          <p class="points">{{reward.points}}
+            <span>{{i18n
+                "discourse_rewards.point"
+                count=reward.points
+              }}</span></p>
+          <p class="quantity">{{i18n
+              "discourse_rewards.available_quantity"
+            }}<span>{{reward.quantity}}
+              {{i18n "reward.quantity.left"}}</span></p>
+        {{else}}
+          <div class="title-contents">
+            <h3 class="title">{{i18n "admin.rewards.reward_not_found"}}</h3>
+          </div>
+        {{/if}}
+        <hr />
+        <p class="description">{{reward.description}}</p>
+        {{#unless fullView}}
+          {{#if redeem}}
+            {{d-button
+              action=(action "grantReward" reward)
+              class="btn-primary button"
+              label="admin.rewards.redeem"
+              disabled=disableRedeemButton
+            }}
+          {{else if user_reward}}
+            <div class="buttons">
+              {{#if reward.id}}
+                {{d-button
+                  action=(action "grantUserReward" user_reward)
+                  class="btn-primary button"
+                  label="admin.rewards.grant_reward"
+                }}
+              {{/if}}
+              {{d-button
+                action=(action "cancelUserReward" user_reward)
+                class="btn-danger button"
+                label="admin.rewards.cancel_grant"
+              }}
+            </div>
+          {{else}}
+            {{d-button
+              action=(action "editReward" reward)
+              class="btn-primary button"
+              icon="pencil-alt"
+              label="admin.rewards.edit"
+            }}
+          {{/if}}
+        {{/unless}}
+      </div>
+    </div>
+  </div>
+{{/d-modal-body}}

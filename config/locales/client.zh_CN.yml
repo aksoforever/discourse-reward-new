@@ -1,0 +1,134 @@
+zh_CN:
+  js:
+    reward:
+      image:
+        help: "添加商品图片."
+      points:
+        validation:
+          required: "请输入积分数."
+          less_than_1: "请输入大于0的积分数值."
+          ok: "积分数值."
+        instructions: "兑换此奖励所需的积分."
+      title:
+        validation:
+          required: "请输入商品名称."
+          ok: "商品名称."
+        instructions: "商品的标题."
+      description:
+        instructions: "商品描述."
+      quantity:
+        left: "Left"
+        validation:
+          required: "请输入库存数量."
+          less_than_1: "请输入大于 0 的数量."
+          ok: "商品数量."
+        instructions: "商品的库存数量."
+    admin:
+      site_settings:
+        categories:
+          discourse_rewards: "Discourse 商品"
+      rewards:
+        image: "商品图片"
+        grant_confirm: "您确定要兑换此商品吗?"
+        cancel_grant_confirm: "您确定拒绝兑换此商品吗?"
+        delete_confirm: "您确定要同意兑换此商品吗?"
+        redeem_confirm: "您确定要兑换此商品吗?"
+        new: "新增商品"
+        rewards:
+          nav: "商品列表"
+        user_rewards:
+          nav: "兑换申请列表"
+        nav_title: "商品"
+        points: "积分"
+        quantity: "数量"
+        title: "标题"
+        description: "描述"
+        save: "保存"
+        delete: "删除"
+        edit: "编辑"
+        redeem: "兑换"
+        grant_reward: "同意兑换"
+        cancel_grant: "拒绝兑换"
+        empty_state_title: "还没有上传任何商品."
+        rewards_grant:
+          empty_state_title: "没有兑换申请记录."
+    user:
+      summary:
+        total_earned_points:
+          one: "总积分数"
+          other: "总积分数"
+    discourse_rewards:
+      category:
+        rewards_points_for_topic_create: "在此类别创建主题获取积分数"
+      my_points_center:
+        th:
+          time: "时间"
+          details: "详情"
+          points: "积分数"
+        my_points: "我的积分: "
+        profile_link_name: "积分中心"
+        nav: "积分消息"
+        redeemed: "成功兑换一个商品: %{title}."
+        topic_create: "创建一个主题: %{title}."
+        post_create: "创建一个回复在: %{title} topic."
+        like_received: "收到其他人的点赞在: %{post_id}."
+        badge: "获得了徽章: %{title}."
+        earned_points: "获得奖励积分."
+        daily_login: "访问社区 %{date}."
+      user:
+        title: "用户: "
+      available_rewards:
+        nav: "商城"
+        empty_state_title: "没有可见的商品."
+        empty_state_body: "管理员上传商品，将显示所有商品。 在这里，您可以使用您获得的积分从这里兑换商品."
+      available_quantity: "库存数量: "
+      point:
+        one: "积分"
+        other: "积分"
+      leaderboard:
+        praise: "您的排名是 %{rank}, %{postfix}"
+        nav: "排行榜"
+        title: "排行榜"
+        praise_user:
+          top_10:
+            praise_1: "非常棒."
+            praise_2: "物联网大神."
+            praise_3: "请接受我的膝盖."
+          top_100:
+            praise_1: "超越了大部分用户."
+            praise_2: "非常棒."
+            praise_3: "请继续保持哦."
+          above_100:
+            praise_1: "请继续加油哦."
+      edit_reward:
+        modal_title: "编辑商品"
+      title: "商品列表"
+      user_rewards:
+        title: "兑换申请列表"
+        cancel_reward:
+          title: "拒绝兑换"
+          reason: "原因"
+          reason_instructions: "您拒绝此次兑换的原因"
+          reason_validation:
+            required: "您需要输入取消原因才能拒绝此次兑换."
+            ok: "原因有效"
+      reward:
+        modal_title: "商品详情"
+      transaction:
+        empty_state_title: "没有积分记录."
+        empty_state_body: "您在所选类别中似乎没有任何积分记录."
+        categories:
+          all: "所有"
+          creation: "主题/回复 创建"
+          daily_login: "日首次登录"
+          like: "获取到的点赞数"
+          badge: "获得徽章"
+          redeem: "兑换的商品"
+          uncategorized: "未分类记录"
+    notifications:
+      titles:
+        rewards: "新的用户兑换"
+      rewards:
+        redeemed: "已经兑换 %{reward_title} 商品."
+        new: "新 %{reward_title} 商品在这里!"
+        new_user_reward: "<span>%{username}</span> %{description}"

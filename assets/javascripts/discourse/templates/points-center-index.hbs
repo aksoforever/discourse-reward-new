@@ -1,0 +1,36 @@
+<div class="my-points">
+  <div class="points-center-header">
+    {{#unless siteSettings.discourse_rewards_show_points_on_site_header}}
+      <div class="points-count">
+        <p class="prefix">{{i18n "discourse_rewards.my_points_center.my_points"}}<span class="count">{{currentUser.available_points}}</span></p>
+      </div>
+    {{/unless}}
+    {{#if model.transactions.length}}
+      <div class="category-selector">
+        {{points-category-filter value=filter onChange=(action (mut filter))}}
+      </div>
+    {{/if}}
+  </div>
+  {{#if filteredTransactions.length}}
+    <div class="transactions-list">
+      <table class="transactions">
+        <tr class="transaction-header">
+          <th class="transaction-date header">{{i18n "discourse_rewards.my_points_center.th.time"}}</th>
+          <th class="transaction-details header">{{i18n "discourse_rewards.my_points_center.th.details"}}</th>
+          <th class="transaction-points header">{{i18n "discourse_rewards.my_points_center.th.points"}}</th>
+        </tr>
+        {{#each filteredTransactions as |transaction index|}}
+          {{transaction-item transaction=transaction}}
+        {{/each}}
+      </table>
+    </div>
+  {{else}}
+    <div class="empty-state">
+      <span class="empty-state-title">{{i18n "discourse_rewards.transaction.empty_state_title"}}</span>
+      <div class="empty-state-body">
+        <p>{{i18n "discourse_rewards.transaction.empty_state_body"}}</p>
+      </div>
+    </div>
+  {{/if}}
+  {{conditional-loading-spinner condition=loading}}
+</div>

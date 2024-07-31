@@ -1,0 +1,156 @@
+en:
+  js:
+    reward:
+      image:
+        help: "Upload a reward image."
+      points:
+        validation:
+          required: "Please enter points."
+          less_than_1: "Please enter points greater than 0."
+          ok: "Reward Points."
+        instructions: "Points needed to redeem this reward."
+      title:
+        validation:
+          required: "Please enter reward title."
+          ok: "Reward Title."
+        instructions: "title of this reward."
+      description:
+        instructions: "Description of this reward."
+      quantity:
+        left: "Left"
+        validation:
+          required: "Please enter quantity."
+          less_than_1: "Please enter quantity greater than 0."
+          ok: "Reward Quantity."
+        instructions: "Quantity of this reward."
+    admin:
+      site_settings:
+        categories:
+          discourse_rewards: "Discourse Rewards"
+      rewards:
+        image: "Reward image"
+        grant_confirm: "Are you sure you want to grant this reward?"
+        cancel_grant_confirm: "Are you sure you don't want to grant this reward?"
+        delete_confirm: "Are you sure you want to grant this reward?"
+        redeem_confirm: "Are you sure you want to redeem this reward?"
+        new: "New"
+        campaign:
+          delete_campaign_confirm: "Are you sure you want to delete this campaign?"
+          nav: "Campaign"
+          fields:
+            campaign_name:
+              title: "Campaign Name"
+              instructions: "Please enter campaign name"
+            campaign_description:
+              title: "Campaign Description"
+              instructions: "Please enter campaign description"
+            campaign_start_date:
+              title: "Campaign Start Date"
+              instructions: "Please enter campaign start date"
+            campaign_end_date:
+              title: "Campaign End Date"
+              instructions: "Please enter campaign end date"
+        rewards:
+          nav: "Rewards"
+        user_rewards:
+          nav: "User Rewards"
+        nav_title: "Rewards"
+        points: "Points"
+        quantity: "Quantity"
+        title: "Title"
+        description: "Description"
+        save: "Save"
+        delete: "Delete"
+        edit: "Edit"
+        redeem: "Redeem"
+        grant_reward: "Grant Reward"
+        reward_not_found: "Please Cancel This reward, It's been deleted"
+        cancel_grant: "Cancel"
+        empty_state_title: "There are no rewards uploaded yet."
+        rewards_grant:
+          empty_state_title: "There are no redeemed rewards."
+    user:
+      summary:
+        total_earned_points:
+          one: "Total Earned Point"
+          other: "Total Earned Points"
+    discourse_rewards:
+      category:
+        rewards_points_for_topic_create: "Reward points for creating a topic in this category"
+      my_points_center:
+        th:
+          time: "Time"
+          details: "Details"
+          points: "Points"
+        my_points: "My Points: "
+        profile_link_name: "Points Center"
+        nav: "My Points Center"
+        redeemed: "Redeemed a reward: %{title}."
+        topic_create: "Created a topic: %{title}."
+        post_create: "Created a post on: %{title} topic."
+        like_received: "Received a like on post id: %{post_id}."
+        badge: "Earned a reward badge: %{title}."
+        earned_points: "Earned reward points."
+        daily_login: "Visited on %{date}."
+        invited_user_joined: "Invited user %{name} Joined."
+      user:
+        title: "User: "
+      available_rewards:
+        nav: "Available Rewards"
+        empty_state_title: "There are no available rewards."
+        empty_state_body: "All Rewards will be displayed once admin uploads any. Here, you can redeem any reward from the availabe ones using your earned points."
+      available_quantity: "Available quantity: "
+      point:
+        one: "point"
+        other: "Points"
+      leaderboard:
+        praise: "Your ranking is %{rank}, %{postfix}"
+        nav: "Leaderboard"
+        title: "Leaderboard"
+        filters:
+          all-time: "All Time"
+          campaign: "Campaign"
+        praise_user:
+          top_10:
+            praise_1: "it's great."
+            praise_2: "the Internet of Things."
+            praise_3: "please accept my knees."
+          top_100:
+            praise_1: "surpassing most users."
+            praise_2: "very good."
+            praise_3: "please keep it up."
+          above_100:
+            praise_1: "please keep on going."
+      edit_reward:
+        modal_title: "Edit Reward"
+      title: "Rewards"
+      user_rewards:
+        title: "User Rewards"
+        cancel_reward:
+          title: "Cancel Reward"
+          reason: "Reason"
+          reason_instructions: "Reason you want to cancel the reward"
+          reason_validation:
+            required: "You need to enter reason of cancellation to cancel this reward."
+            ok: "Reason is valid"
+      reward:
+        modal_title: "Reward Details"
+      transaction:
+        empty_state_title: "There are no transactions."
+        empty_state_body: "Seems like you dont have any transaction in the selected category."
+        categories:
+          all: "All"
+          creation: "Topics/Posts created"
+          daily_login: "Daily Login"
+          like: "Like Received"
+          badge: "Reward Badges earned"
+          redeem: "Rewards Earned"
+          invite: "Invite User Joined"
+          uncategorized: "Uncategorized Transactions"
+    notifications:
+      titles:
+        rewards: "new user reward"
+      rewards:
+        redeemed: "has redeemed %{reward_title} reward."
+        new: "New %{reward_title} reward is here!"
+        new_user_reward: "<span>%{username}</span> %{description}"
