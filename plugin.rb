@@ -88,7 +88,17 @@ after_initialize do
         date: Date.today
       }
 
-      DiscourseRewards::UserPoint.create(user_id: self.id, user_points_category_id: 3, reward_points: points, description: description.to_json) if points > 0
+      if points > 0
+        DiscourseRewards::UserPoint.create(
+          user_id: self.id, 
+          user_points_category_id: 3, 
+          reward_points: points, 
+          description: description.to_json
+        )
+
+        # 更新缓存
+        invalidate_user_cache(self.id)
+      end
     end
   end
 
