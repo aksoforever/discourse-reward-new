@@ -96,8 +96,9 @@ after_initialize do
           description: description.to_json
         )
 
-        # 更新缓存
-        invalidate_user_cache(self.id)
+        # Directly delete cache entries
+        Rails.cache.delete("user_#{self.id}_total_points")
+        Rails.cache.delete("user_#{self.id}_available_points")
       end
     end
   end
