@@ -95,11 +95,17 @@ module DiscourseRewards
 
     def user_rewards
       page = params[:page].to_i || 1
-
-      user_rewards = DiscourseRewards::UserReward.where(status: 'applied').offset(page * PAGE_SIZE).limit(PAGE_SIZE)
-
-      user_reward_list = DiscourseRewards::UserRewardList.new(user_rewards: user_rewards, count: DiscourseRewards::UserReward.where(status: 'applied').count)
-
+    
+      user_rewards = DiscourseRewards::UserReward.where(status: 'applied')
+                      .order(created_at: :desc) # Order by created_at in descending order
+                      .offset(page * PAGE_SIZE)
+                      .limit(PAGE_SIZE)
+    
+      user_reward_list = DiscourseRewards::UserRewardList.new(
+        user_rewards: user_rewards,
+        count: DiscourseRewards::UserReward.where(status: 'applied').count
+      )
+    
       render_serialized(user_reward_list, UserRewardListSerializer)
     end
 

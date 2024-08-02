@@ -16,7 +16,7 @@ module DiscourseRewards
     after_commit :expire_cache
 
     def self.user_total_points(user)
-      Rails.cache.fetch("user_#{user.id}_total_points", expires_in: 24.hour) do
+      Rails.cache.fetch("user_#{user.id}_total_points", expires_in: 12.hour) do
         UserPoint.where(user_id: user.id).sum(:reward_points)
       end
     end

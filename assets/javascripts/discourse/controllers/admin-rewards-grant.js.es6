@@ -26,9 +26,9 @@ export default Controller.extend({
       data: { page: this.page },
     })
       .then((result) => {
-        this.model.userRewards.pushObjects(
-          UserReward.createFromJson(result).userRewards
-        );
+        // Sort the loaded rewards
+        const sortedRewards = UserReward.createFromJson(result).userRewards.sortBy('created_at').reverse();
+        this.model.userRewards.pushObjects(sortedRewards);
       })
       .finally(() => this.set("loading", false));
   },
